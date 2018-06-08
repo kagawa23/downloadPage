@@ -1,0 +1,153 @@
+body {
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 100px;
+  }
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: PingFangSC-Regular, 'Microsoft YaHei', '微软雅黑', Tahoma, Helvetica, sans-serif;
+  }
+ 
+  
+  .clearfix:after {
+    font-size: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '.';
+  }
+ 
+ #isWeiXin{
+     position: relative;
+     width: 100%;
+     text-align: center;
+ }
+ #isWeiXin .title{
+     position: relative;
+     margin-top: 0.33rem;
+     font-size: 0.18rem;
+     color: #f9f9f9;
+ }
+ #isWeiXin .title img{
+     position: absolute;
+     right: 0.22rem;
+     top: -0.25rem;
+     width: 0.68rem;
+     height: auto;
+ }
+ #isWeiXin .top{
+     width: 3.75rem;
+     height: 3.77rem;
+     margin-top: 1rem;
+     background-image: url('../imgs/phone@2x.png');
+     background-repeat:no-repeat;
+     background-size: cover;
+ }
+ #isWeiXin .bottom{
+     margin-left: -0.87rem;
+     position: fixed;
+     bottom: 0.44rem;
+     left: 50%;
+     width: 1.74rem;
+     height: 0.72rem;
+     background-image: url('../imgs/logo@2x.png');
+     background-repeat:no-repeat;
+     background-size: cover;
+ }
+ body{
+     position: relative;
+     background-repeat:no-repeat;
+     background-size: cover;
+     text-align: center;
+ }
+ #noWeiXin{
+     text-align: center;
+ }
+ #noWeiXin .icon{
+     width: 1.50rem;
+     height: 1.50rem;
+     margin-top: 43px;
+ }
+ #noWeiXin h1{
+     margin: 0;
+     padding: 0;
+     margin-bottom: 50px;
+     margin-top: -45px;
+     color: #f9f9f9;
+     font-size: 0.21rem;
+     font-weight: 400;
+ }
+ .download{
+     margin: 0 auto;
+     width: 2.37rem;
+ }
+ .download a{
+     position: relative;
+     margin-bottom: 0.25rem;
+     display: block;
+     height: 0.5rem !important;
+ }
+ .download img{
+     position: absolute;
+     top: 0;
+     left: 0;
+     margin-bottom: 0.25rem;
+     width: 2.37rem;
+     height: 0.5rem; 
+ }
+ .download .ios{
+     margin-bottom: 0.25rem;
+ }
+ 
+ .openApp{
+     position: fixed;
+     top: auto;
+     left: 50%;
+     z-index: 100;
+     width: 143px;
+     font-size: 15px;
+     font-weight: 500;
+     line-height: 36px;
+     color: #fff;
+     text-align: center;
+     background: rgba(0,0,0,0.6);
+     border-radius: 18px;
+     -webkit-transform: translate(-50%,200%);
+     transform: translate(-50%,200%);
+     box-shadow: 0 2px 5px rgba(26,26,26,.25);
+     transition: -webkit-transform .3s .3s;
+     transition: transform .3s .3s;
+     transition: transform .3s .3s,-webkit-transform .3s .3s;
+ }
+ 
+  
+  
+ 
+  
+ 
+  
+  
+  
+  
+ 
+  
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 

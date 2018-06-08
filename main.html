@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居然设计家下载</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var isAndroid = function () {
+            return navigator.userAgent.match(/Android/i) ? true : false;
+        }
+        var isIOS = function () {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+        }
+        var GetRequest = function () {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        function openPage() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                document.getElementById("isWeiXin").style.display = "block";
+                document.getElementById('noWeiXin').style.display = "none";
+                $("#body").css({
+                    "background-image": "url('imgs/wx-bg.png')"
+                });
+            } else {
+                document.getElementById("isWeiXin").style.display = "none";
+                document.getElementById('noWeiXin').style.display = "block";
+                $("#body").css({
+                    "background-image": "url('imgs/bg.png')"
+                });
+                if (isAndroid() || isIOS()) {
+                    $('#openAppBtn').show();
+                } else {
+                    $('#openAppBtn').hide();
+                }
+            }
+        }
+        window.onload = openPage;
+        function openApp() {
+            var param = GetRequest();
+            var designId = param['designerId'] || '';
+            if (isAndroid()) {
+                window.location.href = "consumer://app/android-open?designer_id=" + designId;
+            } else if (isIOS()) {
+                window.location.href = "https://oia.shejijia.com/profile/" + designId;
+            } else {
+                window.location = "https://oia.shejijia.com/appHome";
+            }
+        }
+    </script>
+</head>
+
+<body id="body">
+    <section id="isWeiXin">
+    </section>
+    <section id="noWeiXin" style="display: none;">
+        <img class="icon" src="imgs/icon@2x.png" alt="">
+        <h1>居然设计家</h1>
+        <div class="download">
+            <a href="https://itunes.apple.com/cn/app/id956730262?mt=8&ign-mpt=uo%3D4" title="">
+                <img class="ios" src="imgs/ios_bn@2x.png" alt="">
+            </a>
+            <a href="https://download.shejijia.com/shejijia-consumer-app/android/consumer-release.apk">
+                <img class="android" src="imgs/android_btn@2x.png" alt="">
+            </a>
+        </div>
+        <div id="openAppBtn" class="openApp" onclick="openApp();">打开设计家APP</div>
+    </section>
+</body>
+
+</html>
